@@ -30,12 +30,18 @@
                 <input type="number" id="quantity" min="0" max="20" v-model="posts.quantity">
             </div>
 
-            <div class="form-group mb-4">
+            <!-- <div class="form-group mb-4">
                 <label class="form-label" for="pathURL">Đường dẫn hình ảnh</label>
                 <input type="text" class="form-control w-75" id="pathURL" v-model="posts.image">
+            </div> -->
+
+            <div class="form-group mb-4">
+                <label class="form-label" for="pathURL">Chọn hình ảnh</label><br>
+                <!-- <input type="text" class="form-control w-75" id="pathURL" v-model="posts.image"> -->
+                <input type="file" name="name-file" id="pathURL">
             </div>
 
-            <button type="submit" class="btn btn-primary text-uppercase">Thêm sách</button>
+            <button type="submit" class="btn btn-primary text-uppercase" @click="getNameFileImg">Thêm sách</button>
         </form>
     </div>
 
@@ -65,6 +71,12 @@ export default {
     components: { NavBarView, FooterView },
 
     methods: {
+
+        getNameFileImg() {
+            const fake_path = document.getElementById('pathURL').value;
+            this.posts.image = fake_path.split("\\").pop();
+        },
+
         addNewBook() {
             axios.post('http://localhost:3000/admin/books/store', this.posts)
                 // .then(res => console.log(res))

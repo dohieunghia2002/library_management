@@ -16,7 +16,7 @@
 
                 <div v-if="index < 20" class="card" style="width: 16rem;">
                     <router-link :to="'/books/' + book.slug">
-                        <img class="card-img-top" :src="book.image" alt="Card image cap">
+                        <img class="card-img-top" :src="path + book.image" alt="Card image cap">
                     </router-link>
                     <div class="card-body">
                         <h5 class="card-title">{{ book.name }}</h5>
@@ -40,6 +40,8 @@
 import axios from 'axios'
 import NavBarView from '../components/NavBarView.vue';
 import FooterView from '../components/FooterView.vue';
+import staticPath from '../assets/staticPath';
+
 export default {
     data() {
         return {
@@ -64,6 +66,10 @@ export default {
             return this.books.filter(book => {
                 return book.name.toLowerCase().includes(this.search.toLowerCase())
             })
+        },
+
+        path() {
+            return staticPath
         }
     },
 
