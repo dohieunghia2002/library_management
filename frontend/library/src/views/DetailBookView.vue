@@ -4,7 +4,7 @@
         <div class="container my-4 p-4">
             <div class="row">
                 <div class="col-md-4 book-img">
-                    <img :src="book.image" class="image-responsive">
+                    <img :src="path + book.image" class="image-responsive">
                 </div>
 
                 <div class="col-md-8 book-info-detail">
@@ -45,6 +45,7 @@
 import axios from 'axios'
 import NavBarView from '../components/NavBarView.vue';
 import FooterView from '../components/FooterView.vue';
+import staticPath from '../assets/staticPath/index';
 
 export default {
     data() {
@@ -58,6 +59,10 @@ export default {
     computed: {
         slug() {
             return this.$route.params.slug;
+        },
+
+        path() {
+            return staticPath;
         }
     },
 

@@ -15,7 +15,6 @@
 
 <script>
 
-import axios from 'axios'
 import NavBarView from '../components/NavBarView.vue';
 import FooterView from '../components/FooterView.vue';
 export default {
@@ -48,10 +47,12 @@ export default {
 }
 
 .back-home {
-    color: #cccccc;
+    color: #f15e0f;
+    font-weight: bold;
 }
 
 .back-home:hover {
     color: blue;
+    font-size: 20px;
 }
 </style>

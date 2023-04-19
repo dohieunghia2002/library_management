@@ -6,8 +6,8 @@
             <!-- Search books -->
             <form class="form-inline my-2 my-lg-0">
                 <label class=" form-label my-2 my-sm-0 mr-3">Tìm kiếm sách: </label>
-                <input class="form-control mr-sm-2 col-xs-4" type="search" v-model="search" placeholder="Tên sách"
-                    aria-label="Search">
+                <input class="form-control mr-sm-2 col-xs-4" type="search" v-model="search"
+                    placeholder="Tên sách hoặc tác giả" aria-label="Search">
             </form>
         </div>
 
@@ -64,7 +64,7 @@ export default {
     computed: {
         filteredList() {
             return this.books.filter(book => {
-                return book.name.toLowerCase().includes(this.search.toLowerCase())
+                return book.name.toLowerCase().includes(this.search.toLowerCase()) || book.author.toLowerCase().includes(this.search.toLowerCase())
             })
         },
 
@@ -86,7 +86,7 @@ export default {
 
 .card {
     display: inline-block;
-    margin: 0 12px 8px;
+    margin: 12px 8px;
 }
 
 .card .card-body .card-title {

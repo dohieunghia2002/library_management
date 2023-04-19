@@ -16,4 +16,10 @@ router.get('/users', userController.getAllUser);
 
 router.get('/books/:id/edit', bookController.edit);
 
+router.get('/users/:id/edit', userController.edit);
+
+router.put('/users/:id', userController.update);
+
+router.delete('/users/:id', userController.destroy);
+
 module.exports = router;

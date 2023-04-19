@@ -90,6 +90,7 @@ export default {
                         this.posts.description = "";
                         this.posts.quantity = "";
                         this.posts.image = "";
+                        document.getElementById('pathURL').value = "";
                     }
                     else if (res.data.status === 500) {
                         window.alert("Thêm sách mới thất bại")

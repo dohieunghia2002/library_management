@@ -11,6 +11,33 @@ class UserController {
             res.json({error, status: 500});
         }
     }
+
+    // [GET] /admin/users/:id/edit
+    edit(req, res, next) {
+        User.findById(req.params.id)
+            .then(usr => {
+                res.send(mongooseToObject(usr))
+            })
+            .catch(next);
+    }
+
+    // [PUT] /users/:id
+    update(req, res, next) {
+        User.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.json({
+                status: 200
+            }))
+            .catch(() => res.json({
+                status: 500
+            }));
+    }
+
+    // [DELETE] /users/:id
+    destroy(req, res, next) {
+        User.deleteOne({ _id: req.params.id })
+            .then(() => res.send('DELETE SUCCESS!'))
+            .catch(() => res.send('DELETE FAIL!'));
+    }
 }
 
 module.exports = new UserController;
