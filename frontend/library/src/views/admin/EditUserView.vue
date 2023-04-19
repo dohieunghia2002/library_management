@@ -1,7 +1,7 @@
 <template>
     <NavBarView></NavBarView>
 
-    <div class="eidt-book-view container">
+    <div class="edit-book-view container">
         <h3 class="text-uppercase mt-4 mb-4">Cập nhật thông tin Người dùng</h3>
 
         <form method="POST" @submit.prevent="updateUser">
@@ -113,8 +113,9 @@ export default {
 </script>
 
 <style scoped>
-.eidt-book-view {
-    margin: 16px auto;
+.edit-book-view {
+    margin: 24px auto;
+    min-height: 382px;
 }
 
 .form-group label {
