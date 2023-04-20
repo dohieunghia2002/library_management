@@ -2,7 +2,7 @@
     <NavBarView></NavBarView>
 
     <div class="stored-books-view container">
-        <table class="table">
+        <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr class="text-uppercase">
                     <th scope="col-1">STT</th>
