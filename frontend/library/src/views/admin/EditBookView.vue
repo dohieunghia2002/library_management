@@ -31,8 +31,8 @@
             </div>
 
             <div class="form-group mb-4">
-                <label class="form-label" for="pathURL">URL Hình ảnh</label>
-                <input type="text" class="form-control w-75" id="pathURL" v-model="this.book.image">
+                <label class="form-label" for="pathURL">Chọn hình ảnh</label><br>
+                <input type="file" name="name-file" id="pathURL" @click="getNameFileImg">
             </div>
 
             <button type="submit" class="btn btn-primary text-uppercase">
@@ -85,6 +85,11 @@ export default {
     },
 
     methods: {
+        getNameFileImg() {
+            const fake_path = document.getElementById('pathURL').value;
+            this.posts.image = fake_path.split("\\").pop();
+        },
+
         updateBook() {
             axios.put('http://localhost:3000/books/' + this.id, this.book)
                 .then(res => {
