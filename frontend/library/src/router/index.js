@@ -4,12 +4,12 @@ import HomeView from '../views/HomeView.vue'
 import DetailBookView from '../views/DetailBookView.vue'
 import LogInView from '../views/LogInView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
+import RegisterView from '../views/RegisterView.vue'
 
 import BookCreateView from '../views/admin/BookCreateView.vue'
 import StoredBooksView from '../views/admin/StoredBooksView.vue'
 import EditBookView from '../views/admin/EditBookView.vue'
 import StoredUsersView from '../views/admin/StoredUsersView.vue';
-import RegisterUserView from '../views/admin/RegisterUserView.vue'
 import EditUserView from "../views/admin/EditUserView.vue";
 
 const router = createRouter({
@@ -36,11 +36,6 @@ const router = createRouter({
             component: EditUserView
         },
         {
-            path: '/admin/auth/register',
-            name: 'register',
-            component: RegisterUserView
-        },
-        {
             path: '/admin/books/:id/edit',
             name: 'editbook',
             component: EditBookView
@@ -54,6 +49,11 @@ const router = createRouter({
             path: '/auth/login',
             name: 'login',
             component: LogInView
+        },
+        {
+            path: '/auth/register',
+            name: 'register',
+            component: RegisterView
         },
         {
             path: '/books/:slug',
@@ -70,10 +70,10 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
     const localID = await localStorage.getItem('id');
-    if(!localID && to.name !== 'login') {
+    if (!localID && to.name !== 'login' && to.name !== 'register') {
         next({ name: 'login' });
     }
-    else if(localID && to.name === 'login') {
+    else if (localID && to.name === 'login') {
         next({ name: 'home' });
     }
     else next();

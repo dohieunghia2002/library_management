@@ -37,6 +37,10 @@
 
                                         </form>
 
+                                        <div class="text-center">
+                                            <p>Not a member? <router-link to="/auth/register">Register</router-link></p>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2">

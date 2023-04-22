@@ -4,11 +4,11 @@ const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    username: {type: String, maxLength: 8, required: true, unique: true },
-    password: { type: String, maxLength: 10, required: true},
+    username: { type: String, maxLength: 12, required: true, unique: true },
+    password: { type: String, maxLength: 16, required: true },
     name: { type: String, maxLength: 50 },
-    gender: { type: String, enum: ['Nam', 'Nữ'], default: 'Nam'},
-    position: { type: String, enum: ['Thủ thư', 'Học sinh'], required: true}
+    gender: { type: String, enum: ['Nam', 'Nữ'], default: 'Nam' },
+    position: { type: String, enum: ['Thủ thư', 'Học sinh'], default: 'Học sinh' }
 }, { collection: 'users' });
 
 //this method generates an auth token for the user
