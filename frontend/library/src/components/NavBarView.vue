@@ -50,11 +50,6 @@
                                     Danh sách người dùng
                                 </router-link>
 
-                                <router-link class="dropdown-item text-dark" id="register" to="/admin/auth/register">
-                                    <i class="fas fa-user-plus"></i>
-                                    Đăng ký người dùng
-                                </router-link>
-
                                 <div class="dropdown-divider"></div>
                                 <router-link v-on:click="logoutUser()" class="dropdown-item text-dark" to="/">
                                     <i class="fas fa-sign-out-alt"></i>
