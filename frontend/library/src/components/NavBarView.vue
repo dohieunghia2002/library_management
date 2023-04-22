@@ -19,8 +19,10 @@
                         <li class="nav-item active">
                             <router-link to="/" class="nav-link">Home<span class="sr-only">(current)</span></router-link>
                         </li>
+                    </ul>
 
-                        <!-- Dropdown menu -->
+                    <!-- Dropdown menu -->
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle mb-1" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,7 +30,8 @@
                             </a>
 
 
-                            <div v-if="this.position == 'Thủ thư'" class="dropdown-menu text-dark mt-2 menu-admin"
+                            <div v-if="this.position == 'Thủ thư'"
+                                class="dropdown-menu dropdown-menu-right text-dark mt-2 menu-admin"
                                 aria-labelledby="navbarDropdown">
 
                                 <router-link to="/admin/books/create" class="dropdown-item text-dark">
