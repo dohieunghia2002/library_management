@@ -88,7 +88,7 @@ export default {
     methods: {
         logoutUser() {
             localStorage.clear();
-            window.location.reload();
+            this.$router.push('/auth/login');
         }
     },
 }

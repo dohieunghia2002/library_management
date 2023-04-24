@@ -1,7 +1,5 @@
 <template>
-    <NavBarView></NavBarView>
-
-    <div class="eidt-book-view container">
+    <div class="edit-book-view container">
         <h3 class="text-uppercase mt-4 mb-4">Cập nhật thông tin sách</h3>
 
         <form method="POST" @submit.prevent="updateBook">
@@ -40,15 +38,11 @@
             </button>
         </form>
     </div>
-
-    <FooterView></FooterView>
 </template>
 
 <script>
 
-import axios from 'axios'
-import NavBarView from '../../components/NavBarView.vue';
-import FooterView from '../../components/FooterView.vue';
+import axios from 'axios';
 
 export default {
     data() {
@@ -64,8 +58,6 @@ export default {
             }
         }
     },
-
-    components: { NavBarView, FooterView },
 
     computed: {
         id() {
@@ -109,7 +101,7 @@ export default {
 </script>
 
 <style scoped>
-.eidt-book-view {
+.edit-book-view {
     margin: 16px auto;
 }
 

@@ -1,5 +1,4 @@
 <template>
-    <NavBarView></NavBarView>
     <div class="detail-book-view">
         <div class="container my-4 p-4">
             <div class="row">
@@ -38,13 +37,10 @@
             </div>
         </div>
     </div>
-    <FooterView></FooterView>
 </template>
 
 <script>
-import axios from 'axios'
-import NavBarView from '../components/NavBarView.vue';
-import FooterView from '../components/FooterView.vue';
+import axios from 'axios';
 import staticPath from '../assets/staticPath/index';
 
 export default {
@@ -53,8 +49,6 @@ export default {
             book: null
         }
     },
-
-    components: { NavBarView, FooterView },
 
     computed: {
         slug() {

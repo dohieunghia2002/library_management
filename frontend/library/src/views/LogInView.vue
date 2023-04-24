@@ -92,8 +92,6 @@ export default {
             await axios.post('http://localhost:3000/auth/login', this.login)
                 .then(res => {
                     if (res.data.status == 200) {
-                        window.alert('Đăng nhập thành công\nXin chào ' + res.data.user.name);
-
                         const values = [res.data.user.name, res.data.user.position];
                         localStorage.setItem('id', JSON.stringify(values));
                         this.$router.push('/');

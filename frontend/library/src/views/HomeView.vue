@@ -1,6 +1,4 @@
 <template>
-    <NavBarView></NavBarView>
-
     <div class="home-view container">
         <div class="sections row mb-3 justify-content-center">
             <!-- Search books -->
@@ -32,14 +30,11 @@
 
         </div>
     </div>
-    <FooterView></FooterView>
 </template>
 
 <script>
 
 import axios from 'axios'
-import NavBarView from '../components/NavBarView.vue';
-import FooterView from '../components/FooterView.vue';
 import staticPath from '../assets/staticPath';
 
 export default {
@@ -72,8 +67,6 @@ export default {
             return staticPath
         }
     },
-
-    components: { NavBarView, FooterView }
 }
 
 

@@ -1,5 +1,4 @@
 <template>
-    <NavBarView></NavBarView>
     <div class="stored-users-view container">
         <table class="table">
             <thead class="thead-dark">
@@ -52,14 +51,10 @@
             </div>
         </div>
     </div>
-
-    <FooterView></FooterView>
 </template>
 
 <script>
 import axios from 'axios';
-import NavBarView from '../../components/NavBarView.vue';
-import FooterView from '../../components/FooterView.vue';
 
 export default {
     data() {
@@ -68,8 +63,6 @@ export default {
             id: null
         }
     },
-
-    components: { NavBarView, FooterView },
 
     created() {
         axios.get('http://localhost:3000/admin/users')
@@ -83,8 +76,7 @@ export default {
 
     methods: {
         getIdUser(user) {
-            this.id = user._id
-            // this.$el.getAttribute('data-id');
+            this.id = user._id;
         },
 
         deleteUser() {

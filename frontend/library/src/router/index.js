@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import HeaderView from '../components/NavBarView.vue';
+import FooterView from '../components/FooterView.vue';
+
 import HomeView from '../views/HomeView.vue'
 import DetailBookView from '../views/DetailBookView.vue'
 import LogInView from '../views/LogInView.vue'
@@ -18,32 +21,56 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: HomeView
+            components: {
+                default: HomeView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/admin/books/create',
             name: 'createbook',
-            component: BookCreateView
+            components: {
+                default: BookCreateView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/admin/users',
             name: 'users',
-            component: StoredUsersView
+            components: {
+                default: StoredUsersView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/admin/users/:id/edit',
             name: 'edituser',
-            component: EditUserView
+            components: {
+                default: EditUserView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/admin/books/:id/edit',
             name: 'editbook',
-            component: EditBookView
+            components: {
+                default: EditBookView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/admin/stored/books',
             name: 'storedbook',
-            component: StoredBooksView
+            components: {
+                default: StoredBooksView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/auth/login',
@@ -58,7 +85,11 @@ const router = createRouter({
         {
             path: '/books/:slug',
             name: 'detailbook',
-            component: DetailBookView
+            components: {
+                default: DetailBookView,
+                HeaderView,
+                FooterView
+            }
         },
         {
             path: '/:pathMatch(.*)*',

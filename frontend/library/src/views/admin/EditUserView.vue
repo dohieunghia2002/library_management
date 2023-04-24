@@ -1,6 +1,4 @@
 <template>
-    <NavBarView></NavBarView>
-
     <div class="edit-book-view container">
         <h3 class="text-uppercase mt-4 mb-4">Cập nhật thông tin Người dùng</h3>
 
@@ -45,21 +43,16 @@
 
                 </div>
             </div>
-
             <button type="submit" class="btn btn-primary text-uppercase">
                 Lưu lại
             </button>
         </form>
     </div>
-
-    <FooterView></FooterView>
 </template>
 
 <script>
 
 import axios from 'axios';
-import NavBarView from '../../components/NavBarView.vue';
-import FooterView from '../../components/FooterView.vue';
 
 export default {
     data() {
@@ -73,8 +66,6 @@ export default {
             }
         }
     },
-
-    components: { NavBarView, FooterView },
 
     computed: {
         id() {

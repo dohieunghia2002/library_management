@@ -1,6 +1,4 @@
 <template>
-    <NavBarView></NavBarView>
-
     <div class="stored-books-view container">
         <table class="table table-bordered">
             <thead class="thead-dark">
@@ -53,14 +51,10 @@
             </div>
         </div>
     </div>
-
-    <FooterView></FooterView>
 </template>
 
 <script>
 import axios from 'axios';
-import NavBarView from '../../components/NavBarView.vue';
-import FooterView from '../../components/FooterView.vue';
 
 export default {
     data() {
@@ -69,8 +63,6 @@ export default {
             id: null
         }
     },
-
-    components: { NavBarView, FooterView },
 
     created() {
         axios.get('http://localhost:3000/admin/stored/books')
@@ -84,8 +76,7 @@ export default {
 
     methods: {
         getIdBook(book) {
-            this.id = book._id
-            // this.$el.getAttribute('data-id');
+            this.id = book._id;
         },
 
         deleteBook() {
